@@ -7,8 +7,9 @@ from selenium import webdriver
 def open_browser():
     options = webdriver.ChromeOptions()
     options.page_load_strategy = 'eager'
-    browser.config.window_height = 1024
-    browser.config.window_width = 1024
+    options.add_argument('--headless=new')
+    browser.config.window_height = 1080
+    browser.config.window_width = 1920
     browser.config.base_url = 'https://demoqa.com'
     browser.config.driver_options = options
     yield
